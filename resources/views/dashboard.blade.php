@@ -9,7 +9,7 @@
 
         @can('create post')
         <div>
-            <a href="#" class="m-2 p-2 rounded-lg text-white font-bold bg-pink-400 hover:bg-pink-600">Create New Post</a>
+            <a href="{{ route('posts.create') }}" class="m-2 p-2 rounded-lg text-white font-bold bg-pink-400 hover:bg-pink-600">Create New Post</a>
         </div>
         @endcan
 
@@ -36,7 +36,7 @@
 
                         <div class="space-x-4 mt-4">
                             @can('edit post')
-                            <a href="#"
+                            <a href="{{ route('posts.edit', $post->id) }}"
                                 class="focus:outline-none text-white font-semibold bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 rounded-lg text-sm px-5 py-2.5 mb-2">
                                 Edit
                             </a>
