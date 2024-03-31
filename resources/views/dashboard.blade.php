@@ -7,11 +7,11 @@
 
     <div class="py-12 m-6">
 
-        @hasanyrole('writer|admin')
+        @can('create post')
         <div>
             <a href="#" class="m-2 p-2 rounded-lg text-white font-bold bg-pink-400 hover:bg-pink-600">Create New Post</a>
         </div>
-        @endhasanyrole
+        @endcan
 
         <div class="flex flex-wrap justify-center mt-10">
             @foreach (App\Models\Post::all() as $post )
@@ -35,18 +35,18 @@
                         </p>
 
                         <div class="space-x-4 mt-4">
-                            @role('editor|admin')
+                            @can('edit post')
                             <a href="#"
                                 class="focus:outline-none text-white font-semibold bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 rounded-lg text-sm px-5 py-2.5 mb-2">
                                 Edit
                             </a>
-                            @endrole
-                            @role('publisher|admin')
+                            @endcan
+                            @can('publish post')
                             <a href="#"
                                 class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">
                                 Publish
                             </a>
-                            @endrole
+                            @endcan
                         </div>
 
                     </div>
