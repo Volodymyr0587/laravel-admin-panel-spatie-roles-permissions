@@ -31,6 +31,7 @@
                         </a>
                         <span class="ml-2 bg-gradient-to-r from-pink-700 via-pink-500 to-pink-700 bg-clip-text text-2xl text-transparent">Pink Toucan</span>
                     </div>
+
                     <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                         <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                             <path x-show="!open" fill-rule="evenodd"
@@ -41,6 +42,9 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </button>
+                </div>
+                <div class="ml-8 uppercase text-xl font-bold">
+                    {{ auth()->user()->roles()->implode('name', ', ') }}
                 </div>
                 <nav :class="{'block': open, 'hidden': !open}"
                     class="flex-grow px-4 pb-4 md:block md:pb-0 md:overflow-y-auto">

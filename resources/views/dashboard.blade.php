@@ -7,9 +7,11 @@
 
     <div class="py-12 m-6">
 
+        @hasanyrole('writer|admin')
         <div>
-            <a href="#" class="m-2 p-2 rounded-lg text-white font-bold bg-pink-400 hover:bg-pink-300">Create New Post</a>
+            <a href="#" class="m-2 p-2 rounded-lg text-white font-bold bg-pink-400 hover:bg-pink-600">Create New Post</a>
         </div>
+        @endhasanyrole
 
         <div class="flex flex-wrap justify-center mt-10">
             @foreach (App\Models\Post::all() as $post )
@@ -31,15 +33,20 @@
                             Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo
                             juice poutine.
                         </p>
-                        <div class="space-x-4">
+
+                        <div class="space-x-4 mt-4">
+                            @role('editor|admin')
                             <a href="#"
-                            class="mt-3 text-black hover:text-blue-600 inline-flex items-center">
-                            Edit
-                        </a>
-                        <a href="#"
-                            class="mt-3 text-black hover:text-blue-600 inline-flex items-center">
-                            Delete
-                        </a>
+                                class="focus:outline-none text-white font-semibold bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 rounded-lg text-sm px-5 py-2.5 mb-2">
+                                Edit
+                            </a>
+                            @endrole
+                            @role('publisher|admin')
+                            <a href="#"
+                                class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2">
+                                Publish
+                            </a>
+                            @endrole
                         </div>
 
                     </div>
