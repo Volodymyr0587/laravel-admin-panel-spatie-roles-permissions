@@ -29,6 +29,7 @@
                         <a href="{{ route('dashboard') }}">
                             <x-application-logo class="block h-6 w-auto fill-current text-gray-800" />
                         </a>
+                        <span class="ml-2 bg-gradient-to-r from-pink-700 via-pink-500 to-pink-700 bg-clip-text text-2xl text-transparent">Pink Toucan</span>
                     </div>
                     <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
                         <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
